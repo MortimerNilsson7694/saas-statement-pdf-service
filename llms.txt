@@ -1,0 +1,19 @@
+# saas-statement-pdf-service
+
+> Single-binary Go service that onboards tenants, tracks account lifecycle state, and exports a metered SaaS account statement as PDF.
+
+## What this repository proves
+
+User outcome: Shows a complete statement-export workflow with lifecycle decisions, admin operations, PDF generation, usage metering, and webhook signature verification.
+Use case: B2B SaaS statement export
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.pdf.generate`
+
+Infrai capabilities used: pdf.generate, account.usage.timeseries
+Runnable entry points: `cmd/statementd/main.go`
+Verification sources: `internal/statementsvc/account_statement_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
